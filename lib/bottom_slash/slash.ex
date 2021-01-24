@@ -9,7 +9,8 @@ defmodule BottomSlash.Slash do
 
   command "bottomify" do
     {:ok, encoded} = Bottom.encode(List.first(interaction.data.options).value)
-    %InteractionResponse{type: 4, data: %ResponseData{content: encoded}}
+    name = "#{interaction.member.user.username}#{interaction.member.user.discriminator}"
+    %InteractionResponse{type: 3, data: %ResponseData{content: "**#{name}:** #{encoded}"}}
   end
 
   command "regress" do

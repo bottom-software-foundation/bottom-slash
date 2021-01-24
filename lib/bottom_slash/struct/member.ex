@@ -1,4 +1,4 @@
-defmodule BottomSlash.Member do
+defmodule BottomSlash.Struct.Member do
   use TypedStruct
   alias BottomSlash.Snowflake
   alias BottomSlash.Struct.User

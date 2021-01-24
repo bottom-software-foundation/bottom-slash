@@ -1,5 +1,6 @@
 defmodule BottomSlash.CommandHandler do
   alias BottomSlash.Struct.ApplicationCommandInteractionData, as: Data
+  alias BottomSlash.Struct.ApplicationCommandInteractionDataOption, as: Option
   alias BottomSlash.Struct.{Interaction, InteractionResponse}
 
   defmacro __using__(_opts) do
@@ -14,7 +15,9 @@ defmodule BottomSlash.CommandHandler do
       def parse(conn, _opts) do
         put_in(
           conn.assigns[:interaction],
-          Poison.decode!(conn.assigns[:raw_body], as: %Interaction{data: %Data{}})
+          Poison.decode!(conn.assigns[:raw_body],
+            as: %Interaction{data: %Data{options: [%Option{}]}}
+          )
         )
       end
 

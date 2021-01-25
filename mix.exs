@@ -25,7 +25,7 @@ defmodule BottomSlash.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:typed_struct, "~> 0.2.1"},
       {:poison, "~> 3.1"},
-      {:bottom, "~> 0.1"}
+      {:bottom, "~> 0.2"}
     ]
   end
 end
